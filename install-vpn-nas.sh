@@ -18,6 +18,7 @@ else
 fi
 
 #Create Directory for Sharing
+#directory in /home/<username>/sambashare
 dir="/home/ubuntu/sambashare"
 if [[! -e $dir;]] then
     sudo mkdir $dir
@@ -27,6 +28,14 @@ elif [[! -d $dir;]] then
 fi
 
 #Edit Config File
+#Add :
+#[sambashare]
+#    comment = Samba on Ubuntu
+#    path = /home/username/sambashare
+#    read only = no
+#    browsable = yes
+#in : /etc/samba/smb.conf
+
 config_file_samba="/etc/samba/smb.conf"
 config_config_samba="[sambashare]\r\n   comment = Samba on Ubuntu\r\n   path = /home/username/sambashare\r\n   read only = no \r\n   browsable = yes"
 #echo $config_file_samba
