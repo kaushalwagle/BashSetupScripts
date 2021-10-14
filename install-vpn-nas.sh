@@ -1,4 +1,4 @@
-	#!/bin/bash
+#!/bin/bash
 
 # Read the user input
 #read -p "Enter the user name: " user_name
@@ -19,10 +19,10 @@ fi
 
 #Create Directory for Sharing
 dir="/home/ubuntu/sambashare"
-if [[ ! -e $dir ]]; then
+if [[! -e $dir;]] then
     sudo mkdir $dir
     echo "=====$dir already existis now available"
-elif [[ ! -d $dir ]]; then
+elif [[! -d $dir;]] then
     echo "=====$dir already exist"
 fi
 
