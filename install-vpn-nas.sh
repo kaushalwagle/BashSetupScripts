@@ -16,3 +16,11 @@ then
 else
    echo -e "=====Already Installed!====="
 fi
+
+#Create Directory for Sharing
+dir="/home/ubuntu/sambashare"
+if [[ ! -e $dir ]]; then
+    sudo mkdir $dir
+elif [[ ! -d $dir ]]; then
+    echo "=====$dir already exists but is not a director" 1>&2
+fi
